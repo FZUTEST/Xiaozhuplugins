@@ -1,3 +1,31 @@
+### git流程精简版
+
+##### 准备工作
+
+```
+git clone https://github.com/FZUTEST/Xiaozhuplugins zhikang 
+```
+
+```c
+cd zhikang
+git checkout -b zhikang//切换到zhikang这个本地分支，如果没有则创建
+git pull origin zhikang//将本地分支zhikang与远程分支zhikang相关联
+```
+
+##### 开发阶段
+
+```c
+git status //查看你本地做了哪些修改，建议执行该命令核对一下
+
+git add -A . //将所有已跟踪的文件的修改与删除和新增的未跟踪的文件都添加到暂存区
+
+git commit -m "注释"
+
+git push origin zhikang
+```
+
+### git流程详细版
+
 ##### 首先clone仓库到本地
 
 - 克隆下来的是默认是主分支
