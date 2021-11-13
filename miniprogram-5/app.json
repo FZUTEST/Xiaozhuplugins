@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/user/user",
+    "pages/collect/collect",
+    "pages/history/history",
+    "pages/group/group"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

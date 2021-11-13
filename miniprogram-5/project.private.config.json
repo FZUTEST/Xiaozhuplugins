@@ -1,0 +1,36 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/collect/collect",
+                    "pathName": "pages/collect/collect",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/history/history",
+                    "pathName": "pages/history/history",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/group/group",
+                    "pathName": "pages/group/group",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

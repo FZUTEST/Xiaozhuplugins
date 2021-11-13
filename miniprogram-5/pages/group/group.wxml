@@ -1,0 +1,4 @@
+<view class="user_group">制作人员</view>
+<view class="user_txt" style="position: relative; left: 0rpx; top: 279rpx">
+    <text>本小程序由你说的都对制作\n如有侵犯著作权行为维权请联系我们\n我们会依法删除所包含内容\nQQ：543006470\n微信：xxxxxxx</text>
+</view>
