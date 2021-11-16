@@ -13,20 +13,14 @@
         "miniprogram": {
             "list": [
                 {
-                    "name": "pages/collect/collect",
+                    "name": "我的收藏",
                     "pathName": "pages/collect/collect",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "pages/history/history",
+                    "name": "历史记录",
                     "pathName": "pages/history/history",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/group/group",
-                    "pathName": "pages/group/group",
                     "query": "",
                     "scene": null
                 }

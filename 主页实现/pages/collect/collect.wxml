@@ -1,0 +1,6 @@
+<view class="my_collect">我的收藏</view>
+
+<view class="search_row">
+  <input value="{{inpValue}}" placeholder="请输入您要搜索的插件" bindinput="handleInput"> </input>
+  <button bindtap="handleCancel">确认</button>
+</view>

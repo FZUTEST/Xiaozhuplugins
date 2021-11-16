@@ -1,0 +1,35 @@
+page {
+    background-color: #dedede;
+  }
+
+  .my_collect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 60rpx;
+    background-color: #546dfa;
+    color: #fff;
+  }
+  
+  .search_row {
+    margin: 20rpx;
+    height: 60rpx;
+    display: flex;
+  }
+  .search_row input {
+    background-color: #fff;
+    flex: 1;
+    height: 100%;
+    padding-left: 30rpx;
+  }
+  .search_row button {
+    padding: 0;
+    margin: 0 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+  }
+  .search_row button:not([size="mini"]) {
+    width: 150rpx;
+  }
