@@ -35,19 +35,65 @@ page{
 
   .dustbin{
     padding: 0;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10rpx;
+    z-index:2;
   }
   .dustbin:not([size="mini"]) {
     width: 150rpx;
     height: 150rpx;
   }
 
-  image{
+  .dustbin_image{
     margin: 0;
     width:120rpx;
     height: 120rpx;
     border: none;
    }
+
+   .collect-table-wrap{
+    position: relative;
+    width: 668rpx;
+    height: 1200rpx;
+    left: 50%;
+    margin-left: -334rpx;
+    top: 0rpx;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  /* 表格代码   */
+  .table{
+    border-width: 0;
+    border-right: 0;
+    border-bottom: 0;
+    width: 98%;
+    margin-left: 1%;
+  }
+  .addin{
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .addin_name{
+    font-size: 40rpx;
+    margin: 50rpx;
+    color: #161616;
+  }
+  .addin_image{
+    margin: 0;
+    width: 100rpx;
+    height: 100rpx;
+    border: none;
+   }
+  .delete{
+    margin: 0;
+    width: 80rpx;
+    height: 80rpx;
+    border: none;
+  }

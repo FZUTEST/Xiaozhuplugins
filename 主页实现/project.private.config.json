@@ -23,6 +23,12 @@
                     "pathName": "pages/history/history",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "动态表",
+                    "pathName": "pages/biao/biao",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }
