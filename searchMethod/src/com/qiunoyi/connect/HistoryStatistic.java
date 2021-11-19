@@ -1,4 +1,4 @@
-package com.qiunoyi.connet;
+package com.qiunoyi.connect;
 
 public class HistoryStatistic {
     public String id;

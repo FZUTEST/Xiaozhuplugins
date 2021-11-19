@@ -1,4 +1,4 @@
-package com.qiunoyi.connet;
+package com.qiunoyi.connect;
 
 public class Statistic {
     public String guanwang;

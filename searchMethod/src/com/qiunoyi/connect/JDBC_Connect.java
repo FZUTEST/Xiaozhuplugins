@@ -1,4 +1,4 @@
-package com.qiunoyi.connet;
+package com.qiunoyi.connect;
 
 import java.io.InputStream;
 import java.sql.*;

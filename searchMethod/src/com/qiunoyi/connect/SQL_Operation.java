@@ -1,4 +1,4 @@
-package com.qiunoyi.connet;
+package com.qiunoyi.connect;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.qiunoyi.connet.JDBC_Connect;
+import com.qiunoyi.connect.JDBC_Connect;
 
 public class SQL_Operation {
     public static void main(String[] args)
@@ -58,7 +58,7 @@ public class SQL_Operation {
         }finally {
             JDBC_Connect.release(conn,st,rs);
         }
-        return res;
+        return res;/返回的是个List数组
     }
     public static void addStar(String id,String name)
     {
