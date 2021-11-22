@@ -1,0 +1,36 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "我的收藏",
+                    "pathName": "pages/collect/collect",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "历史记录",
+                    "pathName": "pages/history/history",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "动态表",
+                    "pathName": "pages/biao/biao",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

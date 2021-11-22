@@ -1,0 +1,20 @@
+<view class="my_collect">我的收藏</view>
+
+<view class="search_row">
+  <input value="{{inpValue}}" placeholder="请输入您要搜索的插件" bindinput="handleInput"> </input>
+  <button bindtap="handleCancel">确认</button>
+</view>
+
+<button class="dustbin" bindtap="use_dustbin" style="position: absolute; left: 560rpx; top: 1230rpx">
+    <image class="dustbin_image" src="/icon/垃圾筒.png"></image>
+  </button>
+
+<view class='collect-table-wrap'>
+    <view class="table">
+      <view class="addin" wx:for="{{num}}">
+          <image class="addin_image" src="/icon/百宝箱.png"></image>
+          <view class="addin_name">百宝箱</view>
+          <image class="is_favorite" src="/icon/is_favorite.png" catchtap='clickList'></image>
+      </view>
+    </view>
+ </view>
