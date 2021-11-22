@@ -1,0 +1,19 @@
+/* pages/ahead/ahead.wxss */
+page{
+    display: flex;
+    justify-content: center;
+}
+.searchbox{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 240px;
+    height: 40px;
+    align-items: center;
+}
+input{
+    margin-left: 12px;
+    width: 200px;
+    font-size: 20px;
+}

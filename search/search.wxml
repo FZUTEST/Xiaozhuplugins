@@ -1,0 +1,6 @@
+<!--pages/search/search.wxml-->
+<view class="searchbox">
+<input placeholder="请输入搜索关键字" bindinput="getInput" value="{{val}}"></input>
+<icon type="search" wx:if="{{isSearch}}"></icon>
+<icon type="clear" wx:if="{{isClear}}" bindtap="clearTap"></icon>
+</view>

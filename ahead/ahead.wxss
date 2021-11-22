@@ -1,0 +1,30 @@
+/* pages/ahead/ahead.wxss */
+page{
+    display: flex;
+    justify-content: center;
+}
+.searchbox{
+    margin-top: 200px;
+    display: flex;
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 240px;
+    height: 40px;
+    align-items: center;
+}
+input{
+    margin-left: 12px;
+    width: 200px;
+    font-size: 20px;
+}
+.image{
+    display: flex;
+    justify-content: center;
+}
+.size
+{
+    margin-top: 50px;
+    width: 130px;
+    height: 130px;
+}

@@ -1,0 +1,35 @@
+/* pages/details/details.wxss */
+.btn1{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+.ttn1{
+    position: absolute;
+    top: 14rem;
+    white-space: pre-wrap;
+    color: gray;
+    font: 0.9em sans-serif;
+}
+.swiper1{
+    position: absolute;
+    margin-top: 90px;
+    width: 100%;
+}
+.divline{
+    position: absolute;
+    margin-top: 154px;
+    background-color:#566577;
+    width: 100%;
+    height: 8rpx;
+}
+.image{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.size
+{
+    width: 50px;
+    height: 50px;
+}

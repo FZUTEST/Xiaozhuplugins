@@ -1,0 +1,22 @@
+<!--pages/details/details.wxml-->
+<view class='image'>
+<image src="/pages/logo.jpg" class="size"></image>
+</view>
+<button class="btn1" type='primary' style="width:160rpx;height:90rpx;padding:6px;">获取</button>
+<swiper wx:if="{{banners}}" class="swiper1" indicator-dots="true" autoplay circular>
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.picUrl}}"> </image>
+    </swiper-item>
+</swiper>
+<view class="container">
+    <view class="divline"></view>
+</view>
+<text class="ttn1">
+专为Edge浏览器设计的最佳广告拦截器。Adblock For Edge会删除所有类型的广告
+
+特征：
+我们使用经过精心策划和测试的广告屏蔽过滤器列表。我们会经常更新过滤器。
+我们阻止网站检测广告拦截软件。请注意：并非在所有可能的请款下都有效。阻止第三方跟踪器并保护您的隐私
+缩短页面加载时间并享受更快的互联网
+通过使用恶意软件，诈骗和加密货币矿工阻止恶意软件来安全浏览
+</text>
