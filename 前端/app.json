@@ -7,7 +7,9 @@
     "pages/ahead/ahead",
     "pages/details/details",
     "pages/search/search",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/teach/teach",
+    "pages/outrul/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
