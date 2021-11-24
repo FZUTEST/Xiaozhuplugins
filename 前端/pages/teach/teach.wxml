@@ -1,0 +1,10 @@
+<view class='warp'>
+      <view class='list'> 
+            <view class='style {{item.id==num?"active":""}}' catchtap='clickList' wx:for="{{message}}"  id="{{index}}">{{item.text}}
+            </view>
+      </view>
+      <view>
+            <button  wx:for="{{content}}" wx:key="index" bindtap='goo'>{{item.text}}
+            </button>
+      </view>
+</view>

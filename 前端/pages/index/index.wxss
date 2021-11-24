@@ -1,0 +1,84 @@
+.butsize1 {
+  position: relative; 
+  left: 0rpx;
+  top: 0rpx;
+  height: 100rpx;
+  background-color: #5677fc;
+  color: white;
+}
+.butsize2 {
+   width :400rpx;
+  height: 100rpx;
+  position: relative; 
+  left: 250rpx;
+  top: 50rpx;
+  background-color: #5677fc;
+  color: white;
+}
+.picsize1{
+  position:relative; 
+  top: 0rpx;
+  width : 150rpx;
+  height : 150rpx
+}
+.picsize2{
+  position:relative; 
+  top: 100rpx;
+  width : 700rpx;
+  height : 500srpx;
+   left: 25rpx; 
+}
+.swiloc1
+{
+  position: relative; 
+  left : 600rpx;
+  top: -275rpx
+}
+.swiloc2
+{
+  position: relative; 
+  left: 485rpx;
+  top: -175rpx
+}
+.swiloc3
+{
+  position: relative; 
+  left: 370rpx; 
+  top: -75rpx
+}
+.table {
+  border: 0px solid darkgray;
+ }
+ .tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+ }
+ .td {
+  width:40%;
+  justify-content: center;
+  text-align: center;
+ }
+ .td2 {
+  color :red;
+  width:40%;
+  justify-content: center;
+  text-align: center;
+ }
+ .bg-w{
+  background: snow;
+ }
+ .bg-g{
+  background: #E6F3F9;
+ }
+ .th {
+  width: 40%;
+  justify-content: center;
+  background: #fdfdfd;
+  color:black;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+ }

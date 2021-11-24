@@ -1,0 +1,32 @@
+<button class="butsize1"  >小猪搜插件</button>
+<image src='/images/hot.png' class="picsize1"> </image>
+
+<view class="table">
+ <view class="tr bg-w">
+ <view class="th">名称</view>
+ <view class="th">平台</view>
+ <view class="th ">下载量</view>
+ <view class="th ">收藏</view>
+ </view>
+ <block wx:for="{{listData}}" wx:key="code">
+ <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+ <view class="td">{{item.code}}</view>
+ <view class="td">{{item.text}}</view>
+ <view class="td2" >{{item.type}}</view>
+ <view class="td2">{{item.none}}</view>
+ </view>
+ <view class="tr" wx:else>
+ <view class="td">{{item.code}}</view>
+ <view class="td">{{item.text}}</view>
+ <view class="td2">{{item.type}}</view>
+ <view class="td2">{{item.none}}</view>
+ </view>
+ </block>
+</view>
+<view class="body-view">
+    <switch  class="swiloc1" bindchange="switch1Change"/>
+    <switch  class="swiloc2" bindchange="switch2Change"/>
+    <switch  class="swiloc3" bindchange="switch3Change"/>
+</view>
+<button class="butsize2" >插件学习</button>
+<image src='/images/hot.png' class="picsize2" bindtap="teachgo"> </image>
