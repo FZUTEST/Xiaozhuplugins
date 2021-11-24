@@ -3,14 +3,43 @@
     "pages/user/user",
     "pages/collect/collect",
     "pages/history/history",
-    "pages/group/group"
+    "pages/group/group",
+    "pages/ahead/ahead",
+    "pages/details/details",
+    "pages/search/search",
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "小猪插件",
     "navigationBarTextStyle":"black"
   },
+  "tabBar": {
+        "color": "black",
+        "selectedColor": "red",
+        "borderStyle": "white",
+        "list": [
+            {
+                "selectedIconPath": "images/homepage1.jpg",
+                "iconPath": "images/homepage2.jpg",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "selectedIconPath": "images/search1.png",
+                "iconPath": "images/search2.png",
+                "pagePath": "pages/search/search",
+                "text": "搜索"
+            },
+            {
+                "selectedIconPath": "images/mine1.png",
+                "iconPath": "images/mine2.jpg",
+                "pagePath": "pages/user/user",
+                "text": "我的"
+            }
+        ]
+    },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
