@@ -1,4 +1,4 @@
-package com.qiunoyi.connect;
+package com.example.wxtest;
 
 import java.io.InputStream;
 import java.sql.*;
