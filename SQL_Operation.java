@@ -12,23 +12,10 @@ import com.qiunoyi.connet.JDBC_Connect;
 public class SQL_Operation {
     public static void main(String[] args)
     {
-        ArrayList<Statistic> strings = new ArrayList<>();
-        Statistic temp=new Statistic("https://chrome.zzzmh.cn/info?token=dhdgffkkebhmkfjojejmpbldmpobfkfo",
-                "https://res.zzzmh.cn/chrome/v2/crx/dhdgffkkebhmkfjojejmpbldmpobfkfo/logo/logo.png",
-                "Tampermonkey 油猴脚本");
-        strings.add(temp);
-        System.out.println(strings.get(0).name);
-
-
-        ArrayList<Statistic> statistic = search("浏览器");
-        System.out.println(statistic.get(3).name);
-        addStar("002","邱诚");
-        dropStar("001","qiunoyi");
-        ArrayList<StarStatistic> statistic2 =searchStar("002");
-        System.out.println(statistic2.get(0).name);
-
-        ArrayList<HistoryStatistic> statistic3 =searchHis("001");
-        System.out.println(statistic3.get(0).name);
+        ArrayList<StarStatistic> statistic = searchStar("001");
+        System.out.println(statistic.get(0).guanwang);
+        ArrayList<HistoryStatistic> statistic2 = searchHis("001");
+        System.out.println(statistic2.get(0).guanwang);
     }
     public static ArrayList<Statistic> search(String str)
     {
@@ -124,6 +111,22 @@ public class SQL_Operation {
             JDBC_Connect.release(conn,st,rs);
         }
     }
+    public static void dropHisALL(String id)
+    {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            conn = JDBC_Connect.getConnect();//获取数据库连接
+            st = conn.createStatement();//获取SQL的执行对象
+            String sql ="DELETE FROM history WHERE id='"+id+"';";
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBC_Connect.release(conn,st,rs);
+        }
+    }
     public static ArrayList<StarStatistic> searchStar(String id)
     {
         Connection conn = null;
@@ -133,7 +136,7 @@ public class SQL_Operation {
         try {
             conn = JDBC_Connect.getConnect();//获取数据库连接
             st = conn.createStatement();//获取SQL的执行对象
-            String sql ="SELECT * FROM star WHERE id = '"+id+"';";
+            String sql ="SELECT * FROM star,information WHERE information.name=star.name and star.id = '"+id+"';";
             rs = st.executeQuery(sql);
             if(rs==null)
             {
@@ -141,9 +144,11 @@ public class SQL_Operation {
             }
             while(rs.next())
             {
-                StarStatistic statistic= new StarStatistic("","");
+                StarStatistic statistic= new StarStatistic("","","","");
                 statistic.id = rs.getString("id");
                 statistic.name = rs.getString("name");
+                statistic.guanwang = rs.getString("guanwang");
+                statistic.img = rs.getString("img");
                 res.add(statistic);
             }
         } catch (SQLException e) {
@@ -162,7 +167,7 @@ public class SQL_Operation {
         try {
             conn = JDBC_Connect.getConnect();//获取数据库连接
             st = conn.createStatement();//获取SQL的执行对象
-            String sql ="SELECT * FROM history WHERE id = '"+id+"';";
+            String sql ="SELECT * FROM information,history WHERE information.name=history.name and history.id = '"+id+"';";
             rs = st.executeQuery(sql);
             if(rs==null)
             {
@@ -170,9 +175,11 @@ public class SQL_Operation {
             }
             while(rs.next())
             {
-                HistoryStatistic statistic= new HistoryStatistic("","");
+                HistoryStatistic statistic= new HistoryStatistic("","","","");
                 statistic.id = rs.getString("id");
                 statistic.name = rs.getString("name");
+                statistic.guanwang = rs.getString("guanwang");
+                statistic.img = rs.getString("img");
                 res.add(statistic);
             }
         } catch (SQLException e) {
