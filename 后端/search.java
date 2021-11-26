@@ -24,39 +24,34 @@ public class search extends HttpServlet {
         Writer out=response.getWriter();
         //获取微信小程序传递的参数值并打印
         String transInfo = request.getParameter("username");//前端返回的搜索值
-        String transInfo2 = request.getParameter("user");
-        //String password =  request.getParameter("year");
+        //String transInfo2 = request.getParameter("user");
         System.out.println(transInfo);
+
         ArrayList<Statistic> qiunoyi=SQL_Operation.search(transInfo);
-        //ArrayList<Statistic> qiunoyi2=SQL_Operation.search(transInfo2);
-//        for(int i=0;i< qiunoyi2.size();i++)
-//        {
-//            out.write(qiunoyi2.get(i).name+","+qiunoyi2.get(i).guanwang+","+qiunoyi2.get(i).img+"|");
-//            //System.out.println(qiunoyi.get(i).name+qiunoyi.get(i).guanwang+qiunoyi.get(i).img);
-//        }
+//        向前端返回插件数，前导0格式控制，如：00，01，10
         if(qiunoyi.size()<10)
         {
             String num="0"+Integer.toString(qiunoyi.size());
             System.out.println(num);
-            out.write(num);
-            out.flush();
+//            out.write(num);
+//            out.flush();
         }
         else{
             String num=Integer.toString(qiunoyi.size());
             System.out.println(num);
-            out.write(num);
-            out.flush();
+//            out.write(num);
+//            out.flush();
         }
-        System.out.println(qiunoyi.size());
-
+        //System.out.println(qiunoyi.size());
+//        向前端返回搜索结果
         for(int i=0;i< qiunoyi.size();i++)
         {
             if (i == qiunoyi.size() - 1) {//如果到了最后一个插件输出||标志
-                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + "||");
+                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang );
                 out.flush();
             }
             else {
-                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + "|");
+                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + ",");
                 out.flush();
                 System.out.println(qiunoyi.get(i).name + qiunoyi.get(i).guanwang + qiunoyi.get(i).img);
             }

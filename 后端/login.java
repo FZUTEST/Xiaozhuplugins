@@ -1,12 +1,19 @@
 package com.example.wxtest;
 
+import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Writer;
+import java.net.URL;
+
+import static com.alibaba.fastjson.JSON.parseObject;
 
 @WebServlet(name = "login", urlPatterns = "/login")
 public class login extends HttpServlet {
@@ -21,49 +28,45 @@ public class login extends HttpServlet {
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
         Writer out=response.getWriter();
         //获取微信小程序传递的参数值并打印
-        String id = request.getParameter("code");//前端返回的搜索值
+        String code = request.getParameter("ID");//前端返回的搜索值
+        System.out.println(code);
 
-        //String password =  request.getParameter("year");
-        System.out.println(id);
-        out.write(id);
-        //ArrayList<Statistic> qiunoyi=SQL_Operation.search(id);
-        //ArrayList<Statistic> qiunoyi2=SQL_Operation.search(transInfo2);
-//        for(int i=0;i< qiunoyi2.size();i++)
-//        {
-//            out.write(qiunoyi2.get(i).name+","+qiunoyi2.get(i).guanwang+","+qiunoyi2.get(i).img+"|");
-//            //System.out.println(qiunoyi.get(i).name+qiunoyi.get(i).guanwang+qiunoyi.get(i).img);
-//        }
-//        if(qiunoyi.size()<10)
-//        {
-//            String num="0"+Integer.toString(qiunoyi.size());
-//            System.out.println(num);
-//            out.write(num);
-//        }
-//        else{
-//            String num=Integer.toString(qiunoyi.size());
-//            System.out.println(num);
-//            out.write(num);
-//        }
-//        System.out.println(qiunoyi.size());
-//
-//        for(int i=0;i< qiunoyi.size();i++)
-//        {
-//            if (i == qiunoyi.size() - 1) {//如果到了最后一个插件输出||标志
-//                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + "||");
-//                out.flush();
-//            }
-//            else {
-//                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + "|");
-//                out.flush();
-//                System.out.println(qiunoyi.get(i).name + qiunoyi.get(i).guanwang + qiunoyi.get(i).img);
-//            }
-//
-//        }
-//        out.close();
+//        System.out.println(id);
+//        out.write(id);
+//------------------------------------------------------------------------------------------------
+
+
+        StringBuilder json = new StringBuilder();
+        String url ;
+        BufferedReader in ;
+        String inputLine ;
+        String json1 ;
+        //这里的appid与secret换成你自己的secret
+        url = "https://api.weixin.qq.com/sns/jscode2session?appid=wxc55e1861f401cf25&secret=339142b2466fba5a1334e8f8cf657fd9&js_code="
+                + code + "&grant_type=authorization_code";
+        System.out.println(url);
+        in = new BufferedReader(new InputStreamReader(new URL(url)
+                .openConnection().getInputStream(), "utf-8"));
+        while ((inputLine = in.readLine()) != null) {
+            json.append(inputLine);
+        }
+        System.out.println(json);
+        in.close();
+
+
+        json1 = json.toString();
+        JSONObject jobject = parseObject(json1);
+
+        System.out.println(json1);
+        String openid = jobject.getString("openid");
+        //out.write(openid);
+        System.out.println(openid);
+
+//------------------------------------------------------------------------------------------------------------
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        doGet(request, response);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.qiunoyi.connect;
+package com.example.wxtest;
 
 public class Statistic {
     public String guanwang;
