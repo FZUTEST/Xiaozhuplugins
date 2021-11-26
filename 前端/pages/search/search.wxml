@@ -1,6 +1,15 @@
-<!--pages/search/search.wxml-->
-<view class="searchbox">
-<input placeholder="请输入搜索关键字" bindinput="getInput" value="{{val}}"></input>
-<icon type="search" wx:if="{{isSearch}}"></icon>
-<icon type="clear" wx:if="{{isClear}}" bindtap="clearTap"></icon>
-</view>
+
+<view class="search_con">
+   <form bindsubmit='formSubmit'>
+     <input type="text" name="username" placeholder='输入插件关键字' class="search_input"></input>
+     <button form-type='submit' class="search_btn">搜索</button>
+   </form>
+ </view>
+
+    <view class="table">
+      <view class="addin" wx:for="{{lines}}">
+          <image class="addin_image" data-index="{{index}}" bindtap="copy" src="{{item.logo}}"></image>
+          <view class="addin_name" bindtap="share" url="{{item.url}}">{{item.name}}</view>
+          <switch class="is_favorite"   data-index="{{index}}" bindchange='clickList'/>
+      </view>
+    </view>

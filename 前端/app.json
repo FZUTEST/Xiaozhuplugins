@@ -1,26 +1,27 @@
 {
-  "pages": [
-    "pages/user/user",
-    "pages/collect/collect",
-    "pages/history/history",
-    "pages/group/group",
-    "pages/ahead/ahead",
-    "pages/details/details",
-    "pages/search/search",
-    "pages/index/index",
-    "pages/teach/teach",
-    "pages/outrul/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小猪插件",
-    "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-        "color": "black",
-        "selectedColor": "red",
-        "borderStyle": "white",
+    "pages": [
+        "pages/index/index",
+        "pages/teach/teach",
+        "pages/outrul/index",
+        "pages/outrul2/index",
+        "pages/user/user",
+        "pages/search/search",
+        "pages/collect/collect",
+        "pages/history/history",
+        "pages/group/group",
+        "pages/ahead/ahead"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "小猪插件",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "white",
+        "selectedColor": "#1296db",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+
         "list": [
             {
                 "selectedIconPath": "images/homepage1.jpg",
@@ -31,7 +32,7 @@
             {
                 "selectedIconPath": "images/search1.png",
                 "iconPath": "images/search2.png",
-                "pagePath": "pages/search/search",
+                "pagePath": "pages/ahead/ahead",
                 "text": "搜索"
             },
             {
@@ -42,6 +43,5 @@
             }
         ]
     },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json"
 }

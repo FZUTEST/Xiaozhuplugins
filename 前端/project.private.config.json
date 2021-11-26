@@ -13,20 +13,20 @@
         "miniprogram": {
             "list": [
                 {
-                    "name": "我的收藏",
-                    "pathName": "pages/collect/collect",
+                    "name": "插件学习",
+                    "pathName": "pages/index/teach/teach",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "历史记录",
-                    "pathName": "pages/history/history",
+                    "name": "搜索功能",
+                    "pathName": "pages/search/search",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "动态表",
-                    "pathName": "pages/biao/biao",
+                    "name": "",
+                    "pathName": "pages/teach/teach",
                     "query": "",
                     "scene": null
                 }

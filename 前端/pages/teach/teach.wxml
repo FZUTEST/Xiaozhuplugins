@@ -4,6 +4,7 @@
             </view>
       </view>
       <view>
+      <view wx:for="{{content}}"  wx:key="index">{{item.text1}}</view>
             <button  wx:for="{{content}}" wx:key="index" bindtap='goo'>{{item.text}}
             </button>
       </view>

@@ -11,28 +11,6 @@ page {
     color: #fff;
   }
   
-  .search_row {
-    margin: 20rpx;
-    height: 60rpx;
-    display: flex;
-  }
-  .search_row input {
-    background-color: #fff;
-    flex: 1;
-    height: 100%;
-    padding-left: 30rpx;
-  }
-  .search_row button {
-    padding: 0;
-    margin: 0 10rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26rpx;
-  }
-  .search_row button:not([size="mini"]) {
-    width: 150rpx;
-  }
 
   .dustbin{
     padding: 0;
@@ -60,6 +38,7 @@ page {
     width: 668rpx;
     height: 1200rpx;
     left: 50%;
+    margin-top: 30rpx;
     margin-left: -334rpx;
     top: 0rpx;
     overflow-y: scroll;
@@ -85,6 +64,7 @@ page {
     font-size: 40rpx;
     margin: 50rpx;
     color: #161616;
+    width: 40%;
   }
   .addin_image{
     margin: 0;
@@ -98,3 +78,29 @@ page {
     height: 80rpx;
     border: none;
   }
+
+
+  .search_con .search_input{
+    position: absolute;
+    border: 1px solid rgb(214, 211, 211);
+    width: 253px;
+    height: 45px;
+    border-radius: 100px;
+    font-size: 17px;
+    padding-left: 25px;/*此处要用padding-left才可以把光标往右移动15像素，不可以用text-indent*/
+    color: #333;
+    display: inline-block;
+   }
+   
+   .search_con .search_btn{
+     position: absolute;
+   right: 25px;
+   position: absolute;
+   top: 18.9px;
+    width: 85px;
+    height: 43px;
+    background: #56b273;
+    color: #fff;
+    border-radius: 50px;
+    display: inline-block;
+   }

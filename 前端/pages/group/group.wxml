@@ -1,4 +1,5 @@
 <view class="user_group">制作人员</view>
-<view class="user_txt" style="position: relative; left: 0rpx; top: 279rpx">
-    <text>本小程序由你说的都对制作\n如有侵犯著作权行为维权请联系我们\n我们会依法删除所包含内容\nQQ：543006470\n微信：xxxxxxx</text>
+<view class="user_txt" style="position: relative; left: 0rpx; top: 229rpx">
+    <text>本小程序由你说的都对制作\n如有侵犯著作权行为维权请联系我们\n我们会依法删除所包含内容\nQQ：543006470\n微信：543006470</text>
 </view>
+<image class="background" mode="widthFix" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fc_fill%2Cw_450%2Ch_300%2Cg_faces%2Fimages%2F20181003%2F6d15f486be804779863690a10dae24a5.gif&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640539224&t=b6864f7981672d838e4cac62163fce2b" style="position: relative; left: 56rpx; top: 328rpx"></image>
