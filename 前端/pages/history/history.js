@@ -1,20 +1,57 @@
 Page({
     data: {
       num: 5,
-      // 输入框的值
-      inpValue:""
+      str: '02name,www.setu.dfj,www.bidu.com|name2,www.fhhsdfsdf.com,www.nidie.com|',
+      list: [],
     },
-    // 输入框的值改变 就会触发的事件
-    handleInput(e){
-      //获取输入框的值
-      const {value}=e.detail;
+
+    onLoad: function(e) {
+      let that = this;
+      wx.request({
+        url: 'http://yitian.free.svipss.top/search', //本地服务器地址
+        data: { //data中的参数值就是传递给后台的数据
+          username:"谷歌",
+        },
+        method: 'get',
+        header: {
+          'content-type': 'application/json' //默认值
+        },
+        success: function(res) { //res就是接收后台返回的数据
+          var splitArray;
+          var regex = /,/;
+          let i=0;
+          let leng;
+          splitArray =res.data.split(regex);
+          leng =splitArray.length;
+          for(;i<splitArray.length;i=i+3){
+            console.log(splitArray[i],splitArray[i+1],splitArray[i+2],"\n");
+            }
+          var lines=[{
+            logo: '',
+            url:'',
+            name:'',
+            }]
+            i=0;
+            for(;i<leng;i=i+3){
+              lines.splice(0,0,{
+              logo : splitArray[i],
+              name : splitArray[i+1],
+              url : splitArray[i+2],
+                })
+              }
+          that.setData({
+            length:splitArray,
+            lines : lines,
+           })
+           var jsa =  JSON.stringify(lines);
+        },
+        fail: function(res) {
+          console.log("失败");
+        }
+      })
     },
-    // 点击 确认按钮
-    handleCancel(){
-      
-    },
-    // 点击 垃圾筒按钮
-    use_dustbin(){
+
+    use_dustbin(event){
       const that=this
       wx.showModal({
         title: '清除历史记录',
@@ -29,7 +66,10 @@ Page({
               //点击取消,默认隐藏弹框
            } else {
               //点击确定
-              that.setData({num:0})
+              that.data.lines.splice(0,200)
+              that.setData({
+              lines: that.data.lines
+              })
               wx.showToast({
                       title:"清除所有历史",
                       icon: 'success',
@@ -41,14 +81,18 @@ Page({
         complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
      })
     },
-    clickList:function(e){
+    clickList: function(event) {
+      let index = event.currentTarget.dataset.index
+      let that = this
+      this.data.lines.splice(index, 1)
       this.setData({
-        num:this.data.num-1
+        lines: this.data.lines
       })
-          wx.showToast({
+      wx.showToast({
               title:"清除此历史记录",
               icon: 'success',
               duration: 1000,
-            })
-   },
+        })
+      
+    },
   })

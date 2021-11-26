@@ -29,4 +29,4 @@
     <switch  class="swiloc3" bindchange="switch3Change"/>
 </view>
 <button class="butsize2" >插件学习</button>
-<image src='/images/hot.png' class="picsize2" bindtap="teachgo"> </image>
+<image src='/images/teach.png' class="picsize2" bindtap="teachgo"> </image>

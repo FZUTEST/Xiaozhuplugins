@@ -1,4 +1,4 @@
-<view class="container">
+<view class="denglu">
   <view class="userinfo">
     <block wx:if="{{!hasUserInfo}}">
       <button bindtap="getUserProfile" class="login"> 登录 </button>

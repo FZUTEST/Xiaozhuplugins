@@ -13,7 +13,7 @@ Page({
             {
               id:'0',
               text:"点击进入哔哩哔哩观看视频",
-             
+              text1:"第一课",
             }
            ]
          },
@@ -24,18 +24,18 @@ Page({
               {
                 id:'0',
                 text:"点击进入哔哩哔哩观看视频",
-                
+                text1:"2",
               }
              ]
          },
          {
             id: '2',
-             text:'教程第一课',
+             text:'教程第三课',
              learn:[
                {
                  id:'0',
                  text:"点击进入哔哩哔哩观看视频",
-                 
+                 text1:"抱紧康奇涵大腿",
                }
               ]
           },
@@ -45,189 +45,37 @@ Page({
              learn:[
                {
                  id:'0',
-                 text:"l4",
-                 
+                 text:"点击进入哔哩哔哩观看视频",
+                 text1:"抱紧康奇涵大腿",
                }
               ]
           },
           {
             id: '4',
-             text:'learn5',
+             text:'教程第五课',
              learn:[
                {
                  id:'0',
-                 text:"l5",
-                 
+                 text:"点击进入哔哩哔哩观看视频",
+                 text1:"抱紧康奇涵大腿",
                }
               ]
           },
           {
             id: '5',
-             text:'learn6',
+             text:'教程第六课',
              learn:[
                {
                  id:'0',
-                 text:"l6",
-                 
+                 text:"点击进入哔哩哔哩观看视频",
+                 text1:"抱紧康奇涵大腿",
                }
               ]
           },
-          {
-            id: '6',
-             text:'learn7',
-             learn:[
-               {
-                 id:'0',
-                 text:"l7",
-                 
-               }
-              ]
-          },
-          {
-            id: '7',
-             text:'learn8',
-             learn:[
-               {
-                 id:'0',
-                 text:"l8",
-                 
-               }
-              ]
-          },
-          {
-            id: '8',
-             text:'learn9',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '9',
-             text:'learn10',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '10',
-             text:'learn11',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '11',
-             text:'learn12',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '12',
-             text:'learn13',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '13',
-             text:'learn14',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '14',
-             text:'learn15',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 
-               }
-              ]
-          },
-          {
-            id: '15',
-             text:'learn16',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                
-               }
-              ]
-          },
-          {
-            id: '16',
-             text:'learn17',
-             learn:[
-               {
-                 id:'0',
-                 text:"大家好，欢迎来到chrome浏览器插件开发，这是我们的第17课，也是我们content_scripts系列的第3课，本次课程我们将学习web_accessible_resources。",
-                
-               }
-              ]
-          },
-          {
-            id: '17',
-             text:'learn18',
-             learn:[
-               {
-                 id:'0',
-                 text:"l18",
-                 text1:"点击进入哔哩哔哩观看视频",
-               }
-              ]
-          },
-          {
-            id: '18',
-             text:'learn19',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 text1:"点击进入哔哩哔哩观看视频",
-               }
-              ]
-          },
-          {
-            id: '19',
-             text:'learn20',
-             learn:[
-               {
-                 id:'0',
-                 text:"l9",
-                 text1:"点击进入哔哩哔哩观看视频",
-               }
-              ]
-          },
-       ]
-    },
+]
+},
+       
+  
     clickList:function(e){
        console.log(e)
        let num = e.target.id
@@ -246,7 +94,7 @@ Page({
         url: '/pages/outrul/index',
       })
     },
-    goo2:function(e){
+    goo1:function(e){
       wx.navigateTo({
     //新注册一个承载跳转的页面
         url: '/pages/outrul2/index',
