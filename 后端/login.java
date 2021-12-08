@@ -17,7 +17,7 @@ import static com.alibaba.fastjson.JSON.parseObject;
 
 @WebServlet(name = "login", urlPatterns = "/login")
 public class login extends HttpServlet {
-
+    public String openid;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
 
@@ -52,15 +52,14 @@ public class login extends HttpServlet {
         }
         System.out.println(json);
         in.close();
-
-
         json1 = json.toString();
         JSONObject jobject = parseObject(json1);
 
-        System.out.println(json1);
-        String openid = jobject.getString("openid");
-        //out.write(openid);
+        //System.out.println(json1);
+        openid = jobject.getString("openid");
+        out.write(openid);
         System.out.println(openid);
+
 
 //------------------------------------------------------------------------------------------------------------
     }

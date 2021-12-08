@@ -45,10 +45,11 @@ public class SQL_Operation {
             }
             while(rs.next())
             {
-                Statistic statistic= new Statistic("","","");
+                Statistic statistic= new Statistic("","","","");
                 statistic.guanwang = rs.getString("guanwang");
                 statistic.img = rs.getString("img");
                 statistic.name = rs.getString("name");
+                statistic.brower=rs.getString("brower");
                 res.add(statistic);
             }
         } catch (SQLException e) {
@@ -155,11 +156,12 @@ public class SQL_Operation {
             }
             while(rs.next())
             {
-                StarStatistic statistic= new StarStatistic("","","","");
+                StarStatistic statistic= new StarStatistic("","","","","");
                 statistic.id = rs.getString("id");
                 statistic.name = rs.getString("name");
                 statistic.guanwang = rs.getString("guanwang");
                 statistic.img = rs.getString("img");
+                statistic.brower=rs.getString("brower");
                 res.add(statistic);
             }
         } catch (SQLException e) {
@@ -169,16 +171,16 @@ public class SQL_Operation {
         }
         return res;
     }
-    public static ArrayList<HistoryStatistic> searchHis(String id)
+    public static ArrayList<String> searchHis(String id)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        ArrayList<HistoryStatistic> res = new ArrayList<>();
+        ArrayList<String> res = new ArrayList<>();
         try {
             conn = JDBC_Connect.getConnect();//获取数据库连接
             st = conn.createStatement();//获取SQL的执行对象
-            String sql ="SELECT * FROM information,history WHERE information.name=history.name and history.id = '"+id+"';";
+            String sql ="SELECT name FROM history WHERE history.id = '"+id+"';";
             rs = st.executeQuery(sql);
             if(rs==null)
             {
@@ -186,12 +188,7 @@ public class SQL_Operation {
             }
             while(rs.next())
             {
-                HistoryStatistic statistic= new HistoryStatistic("","","","");
-                statistic.id = rs.getString("id");
-                statistic.name = rs.getString("name");
-                statistic.guanwang = rs.getString("guanwang");
-                statistic.img = rs.getString("img");
-                res.add(statistic);
+                res.add(rs.getString("name"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
