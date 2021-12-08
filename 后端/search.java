@@ -13,7 +13,6 @@ import java.io.Writer;
 public class search extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String chan;
         response.setContentType("text/html;charset=utf-8");
 
         //设置响应头允许ajax跨域访问
@@ -28,7 +27,7 @@ public class search extends HttpServlet {
         System.out.println(transInfo);
 
         ArrayList<Statistic> qiunoyi=SQL_Operation.search(transInfo);
-//        向前端返回插件数，前导0格式控制，如：00，01，10
+        //向前端返回插件数，前导0格式控制，如：00，01，10
         if(qiunoyi.size()<10)
         {
             String num="0"+Integer.toString(qiunoyi.size());
@@ -46,17 +45,29 @@ public class search extends HttpServlet {
 //        向前端返回搜索结果
         for(int i=0;i< qiunoyi.size();i++)
         {
-            if (i == qiunoyi.size() - 1) {//如果到了最后一个插件输出||标志
-                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang );
+            if(i==50){
+                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang+","+qiunoyi.get(i).brower);
+                out.flush();
+                break;
+            }
+
+            else if (i == qiunoyi.size() - 1) {//如果到了最后一个插件输出||标志
+                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang+","+qiunoyi.get(i).brower);
                 out.flush();
             }
             else {
-                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + ",");
+                out.write(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + ","+qiunoyi.get(i).brower+",");
                 out.flush();
-                System.out.println(qiunoyi.get(i).name + qiunoyi.get(i).guanwang + qiunoyi.get(i).img);
+                System.out.println(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + ","+qiunoyi.get(i).brower+",");
             }
 
         }
+        /*以下是测试代码*/
+//        for(int i=0;i< qiunoyi.size();i++){
+//        System.out.println(qiunoyi.get(i).img + "," + qiunoyi.get(i).name + "," + qiunoyi.get(i).guanwang + ","+qiunoyi.get(i).brower+",");}
+//        out.write("http://,助手,http://,F,");
+//        out.write("http://,助手,http://,F,");
+//        out.write("http://,助手,http://,C");
         out.close();
     }
 
@@ -65,4 +76,3 @@ public class search extends HttpServlet {
     }
 
 }
-

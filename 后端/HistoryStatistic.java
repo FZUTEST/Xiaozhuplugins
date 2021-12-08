@@ -5,11 +5,13 @@ public class HistoryStatistic {
     public String name;
     public String guanwang;
     public String img;
+    public String brower;
 
-    public HistoryStatistic(String id, String name,String guanwang,String img) {
+    public HistoryStatistic(String id, String name,String guanwang,String img,String brower) {
         this.id = id;
         this.name = name;
         this.guanwang = guanwang;
         this.img = img;
+        this.brower=brower;
     }
 }
