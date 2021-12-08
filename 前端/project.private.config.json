@@ -29,6 +29,18 @@
                     "pathName": "pages/teach/teach",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/teach2/teach2",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "主页功能",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

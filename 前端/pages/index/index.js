@@ -1,6 +1,7 @@
 Page({
   
   data: {
+    openid:null,
     listData:[
     {"code":"右键谷歌翻译","text":"Chrome","type":"114514"},
     {"code":"网页截图","text":"Firefox","type":"1919"},
@@ -44,15 +45,29 @@ Page({
       op :'1'
     },
     
+    onLoad: function() {
+      let that = this;
+      wx.getStorage({
+        key:"key",
+        success(res){
+        console.log(res.data)
+        that.setData({
+          openid:res.data,
+         })
+        },
+      })
+  },
+
     switch1Change: function (e){
+      let that = this;
       if(e.detail.value==true) 
       {
         wx.request({
           url: 'http://yitian.free.svipss.top/deal',
           data: {  //前端向后端发送的数据
             method :this.data1.op,
-            id :this.data1.id,
-            name :this.data1.name,
+            id:that.data.openid,
+            name :that.data.lines[index].name,
           },
           header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
           success(res) {
@@ -74,7 +89,7 @@ Page({
             url: 'http://yitian.free.svipss.top/deal',
             data: {  //前端向后端发送的数据
               method :this.data2.op,
-              id :this.data2.id,
+              id:that.data.openid,
               name :this.data2.name,
             },
             header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
@@ -98,7 +113,7 @@ Page({
             url: 'http://yitian.free.svipss.top/deal',
             data: {  //前端向后端发送的数据
               method :this.data3.op,
-              id :this.data3.id,
+              id:that.data.openid,
               name :this.data3.name,
             },
             header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
@@ -114,7 +129,7 @@ Page({
           url: 'http://yitian.free.svipss.top/deal',
           data: {  //前端向后端发送的数据
             method :this.data4.op,
-            id :this.data.id,
+            id:that.data.openid,
             name :this.data4.name,
           },
           header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
@@ -131,7 +146,7 @@ Page({
           url: 'http://yitian.free.svipss.top/deal',
           data: {  //前端向后端发送的数据
             method :this.data5.op,
-            id :this.data5.id,
+            id:that.data.openid,
             name :this.data5.name,
           },
           header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
@@ -146,7 +161,7 @@ Page({
           url: 'http://yitian.free.svipss.top/deal',
           data: {  //前端向后端发送的数据
             method :this.data6.op,
-            id :this.data6.id,
+            id:that.data.openid,
             name :this.data6.name,
           },
           header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
@@ -159,6 +174,11 @@ Page({
     teachgo: function (options){
       wx.navigateTo({
         url: '../teach/teach',
+      })
+    },
+    teachgo2: function (options){
+      wx.navigateTo({
+        url: '../teach2/teach2',
       })
     },
     onLoad: function () {

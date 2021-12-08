@@ -1,5 +1,5 @@
 <button class="butsize1"  >小猪搜插件</button>
-<image src='/images/hot.png' class="picsize1"> </image>
+<image src="https://tse1-mm.cn.bing.net/th/id/R-C.4e5516dff9624340c70c5f1354410fdf?rik=8dWMRM6VimyDHw&riu=http%3a%2f%2fpic.ntimg.cn%2ffile%2f20200520%2f24969966_204056186084_2.jpg&ehk=uWA%2fl2AQq%2bqppyXgmXjs1FVxjJAdu%2bpzMDx3sx1LLLg%3d&risl=&pid=ImgRaw&r=0" class="picsize1"> </image>
 
 <view class="table">
  <view class="tr bg-w">
@@ -14,7 +14,9 @@
  <view class="td">{{item.text}}</view>
  <view class="td2" >{{item.type}}</view>
  <view class="td2">{{item.none}}</view>
+ 
  </view>
+ 
  <view class="tr" wx:else>
  <view class="td">{{item.code}}</view>
  <view class="td">{{item.text}}</view>
@@ -23,10 +25,11 @@
  </view>
  </block>
 </view>
-<view class="body-view">
     <switch  class="swiloc1" bindchange="switch1Change"/>
     <switch  class="swiloc2" bindchange="switch2Change"/>
     <switch  class="swiloc3" bindchange="switch3Change"/>
-</view>
 <button class="butsize2" >插件学习</button>
-<image src='/images/teach.png' class="picsize2" bindtap="teachgo"> </image>
+<view class="textpos">chrome浏览器插件开发</view>
+<image src='/images/teach1.png' class="picsize2" bindtap="teachgo"> </image>
+<view class="textpos2">Chrome谷歌浏览器插件开发</view>
+<image src='/images/teach2.png' class="picsize3" bindtap="teachgo2"> </image>

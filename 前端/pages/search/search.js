@@ -1,13 +1,41 @@
 Page({
   data: {
-    num: 10,
+    num: 0,
     listData:[],
     username:null,
     shows:false,
     name:null,
+    openid:null,
+  },
+  onLoad: function(){
+    let that = this;
+    wx.getStorage({
+      key:"key",
+      success(res){
+      console.log(res.data)
+      that.setData({
+        openid:res.data,
+       })
+      },
+    })
   },
   formSubmit: function(e) {
       let that = this;
+      wx.request({
+        url: 'http://yitian.free.svipss.top/deal',
+        data:{
+          method:"3",
+          id:that.data.openid,
+          name:e.detail.value.username,
+        },
+        method: 'get',
+        header: {
+          'content-type': 'application/json' //默认值
+        },
+        success (res) {
+          console.log(res.data)
+        }
+      })
       wx.request({
         url: 'http://yitian.free.svipss.top/search', //本地服务器地址
         data: { //data中的参数值就是传递给后台的数据
@@ -25,20 +53,17 @@ Page({
           let leng;
           splitArray =res.data.split(regex);
           leng =splitArray.length;
-          for(;i<splitArray.length;i=i+3){
-            console.log(splitArray[i],splitArray[i+1],splitArray[i+2],"\n");
+          for(;i<splitArray.length;i=i+4){
+            console.log(splitArray[i],splitArray[i+1],splitArray[i+2],splitArray[i+3],"\n");
             }
-          var lines=[{
-            logo: '',
-            url:'',
-            name:'',
-            }]
+          var lines=[]
           i=0;
-          for(;i<leng;i=i+3){
+          for(;i<leng;i=i+4){
             lines.splice(0,0,{
             logo : splitArray[i],
             name : splitArray[i+1],
             url : splitArray[i+2],
+            bro : splitArray[i+3],
               })
             }
           that.setData({
@@ -71,7 +96,7 @@ Page({
         url: 'http://yitian.free.svipss.top/deal', //本地服务器地址
         data: {
           method: a,
-          id:"1",
+          id:that.data.openid,
           name: that.data.lines[index].name,
         },
         method: 'get',

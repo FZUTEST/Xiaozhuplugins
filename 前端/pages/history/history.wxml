@@ -7,7 +7,6 @@
   <view class='collect-table-wrap'>
     <view class="table">
       <view class="addin" wx:for="{{lines}}">
-          <image class="addin_image" src="{{item.logo}}"></image>
           <view class="addin_name">{{item.name}}</view>
           <image class="delete" src="/icon/delete.png"  data-index="{{index}}"  catchtap='clickList'></image>
       </view>

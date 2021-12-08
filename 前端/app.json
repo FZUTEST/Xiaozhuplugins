@@ -1,7 +1,9 @@
 {
     "pages": [
+        "pages/login/login",
         "pages/index/index",
         "pages/teach/teach",
+        "pages/teach2/teach2",
         "pages/outrul/index",
         "pages/outrul2/index",
         "pages/user/user",
@@ -10,6 +12,7 @@
         "pages/history/history",
         "pages/group/group",
         "pages/ahead/ahead"
+
     ],
     "window": {
         "navigationBarBackgroundColor": "#fff",
