@@ -1,0 +1,14 @@
+<view class="log">
+<image src="/images/logo.jpg" class="size"></image>
+<view class="title">小猪插件</view>
+</view>
+<view class="denglu">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button bindtap="getUserProfile" class="login"> 登录 </button>
+    </block>
+    <block wx:else>
+        <button bindtap="tp_index" class="_login">立即体验</button>
+    </block>
+  </view>
+</view>

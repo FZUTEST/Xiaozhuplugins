@@ -22,9 +22,9 @@
         "uploadWithSourceMap": true,
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
+        "useMultiFrameRuntime": false,
+        "useApiHook": false,
+        "useApiHostProcess": false,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -43,8 +43,8 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.14.1",
-    "appid": "wxe2a636b7dbb2c5da",
-    "projectname": "%E5%B0%8F%E7%8C%AA%E6%8F%92%E4%BB%B6",
+    "appid": "wxc55e1861f401cf25",
+    "projectname": "%E5%B0%8F%E7%8C%AA%E6%90%9C%E6%8F%92%E4%BB%B6",
     "cloudfunctionTemplateRoot": "",
     "watchOptions": {
         "ignore": []

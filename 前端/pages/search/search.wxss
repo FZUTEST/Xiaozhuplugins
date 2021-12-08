@@ -37,7 +37,14 @@ page {
   height: 80rpx;
   border: none;
 }
-
+.addin_bro{
+  background-color: #d5dfd7;
+  font-size: 40rpx;
+  margin: 50rpx;
+  font-weight: bolder;
+  color: #383be7;
+  width: 4%;
+}
 
 .search_con .search_input{
   top: 25px;

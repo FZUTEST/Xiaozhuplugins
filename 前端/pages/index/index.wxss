@@ -5,6 +5,10 @@
   height: 100rpx;
   background-color: #5677fc;
   color: white;
+  font-weight: bold;
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 100rpx;
 }
 .butsize2 {
    width :400rpx;
@@ -14,6 +18,10 @@
   top: 50rpx;
   background-color: #5677fc;
   color: white;
+  font-weight: bold;
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 100rpx;
 }
 .picsize1{
   position:relative; 
@@ -28,26 +36,34 @@
   height : 500srpx;
    left: 25rpx; 
 }
+.picsize3{
+  position:relative; 
+  top: 150rpx;
+  width : 700rpx;
+  height : 500srpx;
+  left: 25rpx; 
+}
 .swiloc1
 {
-  position: relative; 
-  left : 600rpx;
-  top: -275rpx
+  position: absolute; 
+  right : 40rpx;
+  top: 370rpx
 }
 .swiloc2
 {
-  position: relative; 
-  left: 485rpx;
-  top: -175rpx
+  position: absolute; 
+  right : 40rpx;
+  top: 467rpx
 }
 .swiloc3
 {
-  position: relative; 
-  left: 370rpx; 
-  top: -75rpx
+  position: absolute; 
+  right : 40rpx;
+  top: 566rpx
 }
 .table {
-  border: 0px solid darkgray;
+  border: 0px solid rgb(34, 21, 151);
+  
  }
  .tr {
   display: flex;
@@ -69,6 +85,7 @@
  }
  .bg-w{
   background: snow;
+ 
  }
  .bg-g{
   background: #E6F3F9;
@@ -81,4 +98,15 @@
   display: flex;
   height: 3rem;
   align-items: center;
+ 
+ }
+ .textpos{
+  position: relative; 
+  top: 50rpx;
+  color :#000;
+ }
+ .textpos2{
+  position: relative; 
+  top: 100rpx;
+  color :#000;
  }

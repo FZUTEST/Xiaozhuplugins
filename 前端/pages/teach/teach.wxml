@@ -1,11 +1,17 @@
+<button class="butsize1">chrome插件开发</button>
 <view class='warp'>
-      <view class='list'> 
+      <scroll-view class='list' scroll-y="true"> 
             <view class='style {{item.id==num?"active":""}}' catchtap='clickList' wx:for="{{message}}"  id="{{index}}">{{item.text}}
+                  
             </view>
-      </view>
+            
+      </scroll-view>
       <view>
-      <view wx:for="{{content}}"  wx:key="index">{{item.text1}}</view>
-            <button  wx:for="{{content}}" wx:key="index" bindtap='goo'>{{item.text}}
-            </button>
+      <view wx:for="{{content}}"  wx:key="index" class="text2s">{{item.text1}}
+            <image wx:for="{{content}}" mode="widthFix" class ="picsize" src='{{item.pic}}'></image>   
+      </view>
+      <view wx:for="{{content}}"  wx:key="index"  class="text3s">{{item.text2}}</view>
+            <button  wx:for="{{content}}" wx:key="index" bindtap='copy{{item.num}}' class="butsize" >点击复制网页链接</button>
+            <button   wx:for="{{content}}" wx:key="index" bindtap='copy{{item.num2}}' class="butsize2" >点击复制BV号</button>
       </view>
 </view>

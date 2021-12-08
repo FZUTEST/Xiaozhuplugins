@@ -1,0 +1,76 @@
+page{
+    background-color: #fff;
+  }
+  /*登录头像*/
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 0, 0);
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+  
+  .usermotto {
+    margin-top: 200px;
+  }
+  
+  /*登录按钮*/
+  .login {
+    position: absolute;
+    font-size: 40rpx;
+    border-radius: 0rpx;
+    background-color: #546dfa;
+    color: #ffffff;
+    box-shadow:0px 3px 6px 2px rgb(114, 113, 113);
+  }
+  .login:not([size="mini"]) {
+    width: 200rpx;
+    height: 95rpx;
+  }
+
+  ._login {
+    position: absolute;
+    font-size: 40rpx;
+    border-radius: 0rpx;
+    background-color: #546dfa;
+    color: #ffffff;
+    box-shadow:0px 3px 6px 2px rgb(114, 113, 113);
+  }
+  ._login:not([size="mini"]) {
+    width: 300rpx;
+    height: 95rpx;
+  }
+
+  .denglu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rpx 0;
+    box-sizing: border-box;
+  } 
+  .log{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150rpx 0;
+    box-sizing: border-box;
+  } 
+  .size{
+    width: 130px;
+    height: 130px;
+  }
+  .title{
+    margin-top: 10px;
+    font-size: 30px;
+  }

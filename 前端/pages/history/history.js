@@ -5,12 +5,26 @@ Page({
       list: [],
     },
 
-    onLoad: function(e) {
+    onLoad: function() {
+      let that = this;
+      wx.getStorage({
+        key:"key",
+        success(res){
+        console.log(res.data)
+        that.setData({
+          openid:res.data,
+         })
+        },
+      })
+    },
+    onReady: function(e) {
       let that = this;
       wx.request({
-        url: 'http://yitian.free.svipss.top/search', //本地服务器地址
+        url: 'http://yitian.free.svipss.top/deal', //本地服务器地址
         data: { //data中的参数值就是传递给后台的数据
-          username:"谷歌",
+          method: "6",
+          id:that.data.openid,
+          name:"a",
         },
         method: 'get',
         header: {
@@ -23,20 +37,14 @@ Page({
           let leng;
           splitArray =res.data.split(regex);
           leng =splitArray.length;
-          for(;i<splitArray.length;i=i+3){
-            console.log(splitArray[i],splitArray[i+1],splitArray[i+2],"\n");
+          for(;i<splitArray.length;i=i+1){
+            console.log(splitArray[i],"\n");
             }
-          var lines=[{
-            logo: '',
-            url:'',
-            name:'',
-            }]
+          var lines=[]
             i=0;
-            for(;i<leng;i=i+3){
+            for(;i<leng;i=i+1){
               lines.splice(0,0,{
-              logo : splitArray[i],
-              name : splitArray[i+1],
-              url : splitArray[i+2],
+              name : splitArray[i],
                 })
               }
           that.setData({
@@ -52,7 +60,7 @@ Page({
     },
 
     use_dustbin(event){
-      const that=this
+      let that=this
       wx.showModal({
         title: '清除历史记录',
         content: '确定要清除所有历史记录？',
@@ -70,6 +78,21 @@ Page({
               that.setData({
               lines: that.data.lines
               })
+              wx.request({
+                url: 'http://yitian.free.svipss.top/deal', //本地服务器地址
+                data: {
+                  method: "5",
+                  id:that.data.openid,
+                  name: "all",
+                },
+                method: 'get',
+                  header: {
+                    'content-type': 'application/json' //默认值
+                  },
+                success (res) {
+                  console.log(res.data)
+                }
+              })
               wx.showToast({
                       title:"清除所有历史",
                       icon: 'success',
@@ -84,6 +107,21 @@ Page({
     clickList: function(event) {
       let index = event.currentTarget.dataset.index
       let that = this
+      wx.request({
+        url: 'http://yitian.free.svipss.top/deal', //本地服务器地址
+        data: {
+          method: "4",
+          id:that.data.openid,
+          name: that.data.lines[index].name,
+        },
+        method: 'get',
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+        success (res) {
+          console.log(res.data)
+        }
+      })
       this.data.lines.splice(index, 1)
       this.setData({
         lines: this.data.lines
